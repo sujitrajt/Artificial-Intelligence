@@ -1,0 +1,8 @@
+(operator
+ moveFromL1ToL2
+ (params 
+  (<a> Tile) (<b> Tile) (<l1> Location) (<l2> Location))
+ (preconds
+  (on <a> <l1>) (on <b> <l2>) (adjacent <l1> <l2>))
+ (effects
+  (on <b> <l1>) (on <a> <l2>) (del on <a> <l1>) (del on <b> <l2>))

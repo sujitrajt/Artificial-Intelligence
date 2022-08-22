@@ -1,0 +1,23 @@
+(disk1 Object)
+(disk2 Object)
+(pegA Object)
+(pegB Object)
+(pegC Object)
+
+(preconds
+(on disk1 disk2)
+(on disk2 pegA) 
+(clear disk1)
+(clear pegB)
+(clear pegC)
+
+(small disk1 pegA)
+(small disk1 pegB)
+(small disk1 pegC)
+(small disk2 pegA)
+(small disk2 pegB)
+(small disk2 pegC)
+)
+
+(effects
+ (on disk1 pegB) (on disk2 pegC))

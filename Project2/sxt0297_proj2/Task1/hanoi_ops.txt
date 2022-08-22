@@ -1,0 +1,36 @@
+(operator
+ moveFromSourceToDest
+(params
+  (<d> Object) (<source> Object) (<dest> Object))
+(preconds
+  (small <d> <dest>)(on <d> <source>) (clear <d>) (clear <dest>))
+(effects
+  (remove on <d> <source>) (clear <source>) (on <d> <dest>) (remove clear <dest>))
+)
+
+(operator
+ moveFromPegToPeg
+ 
+(params
+  (<a> Object) (<y> Object) (<z> Object))
+
+(preconds
+  (clear <a>) (on <a> <y>) (clear <z>))
+ 
+(effects
+  (on <a> <z>) (clear <y>) 
+(remove on <a> <y>) (remove clear <z>)) )
+
+
+(operator
+ moveFromDiskToDisk
+ 
+(params
+  (<a> Object) (<b> Object) (<c> Object))
+
+(preconds
+  (on <a> <b>) (clear <a>) (clear <c>) (small <a> <c>))
+ 
+(effects
+  (on <a> <c>) (clear <b>) 
+(del on <a> <b>) (del clear <c>)) )
